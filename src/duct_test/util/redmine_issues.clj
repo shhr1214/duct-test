@@ -1,6 +1,7 @@
 (ns duct-test.util.redmine-issues
-  :require [clj-http.client :as client])
+  (:require [clj-http.client :as client]
+            [cheshire.core :refer :all]))
 
 (defn get-issues [url]
   "get issues from redmine with http request"
-  (client/head url {:accept :json}))
+  (get (parse-string (:body (client/get url {:accept :json}))) "issues"))

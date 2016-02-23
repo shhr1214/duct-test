@@ -4,4 +4,4 @@
 (defn example-endpoint [config]
   (context "/example" []
     (GET "/" []
-      "This is an example endpoint")))
+      "This is an example!!!!!!!!!!")))

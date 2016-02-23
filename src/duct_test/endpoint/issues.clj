@@ -1,9 +1,8 @@
 (ns duct-test.endpoint.issues
-  (:require [compojure.core :refer :all]))
+  (:require [compojure.core :refer :all]
+            [hiccup.core :as hc]))
 
 (defn issues-endpoint [config]
   (context "/issues" []
     (GET "/" []
-      "Issues!!")
-    (GET "/hara_s" []
-      "HARA'S ISSUES")))
+      (hc/html [:div [:h1 "Hello there"]]))))
