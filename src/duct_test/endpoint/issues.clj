@@ -1,8 +1,9 @@
 (ns duct-test.endpoint.issues
   (:require [compojure.core :refer :all]
+            [duct-test.view.issues.index :as index]
             [hiccup.core :as hc]))
 
 (defn issues-endpoint [config]
   (context "/issues" []
     (GET "/" []
-      (hc/html [:div [:h1 "Hello there"]]))))
+      (index/show-all-issues))))
